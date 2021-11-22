@@ -370,7 +370,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9040977111743465903}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.09
   m_Height: 0.6
@@ -404,9 +404,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eda828c41ce4057a25cd8b81d74f7d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialForce: 20
+  initialForce: 40
   forceMode: 1
-  damageToApply: 0.2
-  particleToSpawn: {fileID: 0}
-  explosionForce: 10
+  damageToApply: 1
+  particleToSpawn: {fileID: 5693802598247578642, guid: cee233a58108e714b90580e0e6f115c7, type: 3}
+  explosionForce: 5
   explosionForceMode: 1
+  explosionDelay: 0.5

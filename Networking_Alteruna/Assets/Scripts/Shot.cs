@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class Shot : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class Shot : MonoBehaviour
 	public GameObject particleToSpawn;
 	public float explosionForce;
 	public ForceMode explosionForceMode;
+	public float explosionDelay = 0.5f;
 	
 	private Transform _tf;
 	private Rigidbody _rb;
@@ -21,26 +23,39 @@ public class Shot : MonoBehaviour
 	private void Start()
 	{
 		_rb.AddForce(initialForce * _tf.forward, forceMode);
+		StartCoroutine(ExplodeRoutine());
 	}
 
-	private void OnTriggerEnter(Collider other)
+	private IEnumerator ExplodeRoutine()
 	{
-		HealthComponent health = other.GetComponent<HealthComponent>();
-		Rigidbody rb = other.GetComponent<Rigidbody>();
+		yield return new WaitForSeconds(explosionDelay);
+		Explode();
+	}
 
-		if (health)
-		{
-			health.TakeDamage(damageToApply);
-		}
+	private void OnCollisionEnter(Collision other)
+	{
+		HealthComponent health = other.collider.GetComponent<HealthComponent>();
+		Rigidbody rb = other.collider.GetComponent<Rigidbody>();
+
+		if (!health)
+			return;
+
+		health.TakeDamage(damageToApply);
 
 		if (rb && explosionForce > 0f)
 		{
-			rb.AddForce((other.transform.position - _tf.position).normalized * explosionForce, explosionForceMode);
+			rb.AddForce((other.contacts[0].point - _tf.position).normalized * explosionForce, explosionForceMode);
 		}
-		
+
+		Explode();
+	}
+
+	public void Explode()
+	{
 		if(particleToSpawn)
 			Instantiate(particleToSpawn, _tf.position, _tf.rotation);
 		
+		StopAllCoroutines();
 		Destroy(gameObject);
 	}
 }

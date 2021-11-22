@@ -19,7 +19,7 @@ public class WeaponManager : MonoBehaviour
         }
     }
 
-    private void Update()
+    private void RecieveUpdate()
     {
         float time = Time.time;
         _weaponIndex += Math.Sign(Input.mouseScrollDelta.y);
