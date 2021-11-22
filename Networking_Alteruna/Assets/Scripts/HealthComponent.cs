@@ -16,7 +16,7 @@ public class HealthComponent : MonoBehaviour
         currentHealth = maxHealth;
     }
     
-    private void TakeDamage(float damage)
+    public void TakeDamage(float damage)
     {
         currentHealth -= damage;
         Debug.Log("oof! " + gameObject.name + " took " + damage + " points of dmg!" );
