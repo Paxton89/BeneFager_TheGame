@@ -9,6 +9,9 @@
           <e p="Benes grejer lmao" t="Include">
             <e p="QuakeMovementScript.cs" t="Include" />
           </e>
+          <e p="Experimental" t="Include">
+            <e p="MoveOnInput.cs" t="Include" />
+          </e>
           <e p="HealthComponent.cs" t="Include" />
         </e>
         <e p="Trinity" t="Include">
