@@ -34,7 +34,7 @@ public class HealthComponent : MonoBehaviour
     {
 		//Ragdoll here
         Debug.Log(gameObject.name + " DIED" );
-        GetComponentInParent<PlayerMovementSync>().canMove = false;
+        //GetComponentInParent<PlayerMovementSync>().canMove = false;
 		ActivateRagdoll();
 
     }
