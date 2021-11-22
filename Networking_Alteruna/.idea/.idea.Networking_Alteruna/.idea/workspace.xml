@@ -49,8 +49,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Experimental/MoveOnInput.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/PlayerInputManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Benes grejer lmao/QuakeMovementScript.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/HealthComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerMovement/PlayerMovementSync.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/HealthComponent.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponBase.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PepsiChainGun.cs" />
       </list>
     </option>
   </component>
@@ -128,5 +131,24 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1637579704603" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/WeaponManager.cs</url>
+          <line>25</line>
+          <properties documentPath="C:\Users\Johan.Liljedahl\Documents\Unity Projects\BeneFager_TheGame\Networking_Alteruna\Assets\Scripts\WeaponManager.cs" initialLine="25">
+            <startOffsets>
+              <option value="472" />
+            </startOffsets>
+            <endOffsets>
+              <option value="558" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
