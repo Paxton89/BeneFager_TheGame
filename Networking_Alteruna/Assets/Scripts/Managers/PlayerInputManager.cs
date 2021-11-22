@@ -5,18 +5,31 @@ using UnityEngine;
 
 public class PlayerInputManager : MonoBehaviour
 {
+    public static PlayerInputManager Instance;
+    
     [SerializeField] private List<PlayerMovementSync> players;
 
-    private PlayerMovementSync myPlayer;
-    private WeaponManager myWeapons;
+    public PlayerMovementSync MyPlayer { get; private set; }
+    public WeaponManager MyWeapons { get; private set; }
+    
+    public Action onPlayerJoined;
+    public Action onUpdate;
 
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
+    }
 
     void Update()
     {
-        if (myPlayer && myWeapons)
+        if (MyPlayer && MyWeapons)
         {
-            myPlayer.RecieveUpdate();
-            myWeapons.RecieveUpdate();
+            MyPlayer.RecieveUpdate();
+            MyWeapons.RecieveUpdate();
+            onUpdate?.Invoke();
         } 
     }
 
@@ -27,8 +40,9 @@ public class PlayerInputManager : MonoBehaviour
             Debug.LogError("Too many players joined");
             return;
         }
-        myPlayer = players[id];
-        myWeapons = players[id].gameObject.GetComponentInChildren<WeaponManager>();
-        myPlayer.OnJoin();
+        MyPlayer = players[id];
+        MyWeapons = players[id].gameObject.GetComponentInChildren<WeaponManager>();
+        MyPlayer.OnJoin();
+        onPlayerJoined?.Invoke();
     }
 }

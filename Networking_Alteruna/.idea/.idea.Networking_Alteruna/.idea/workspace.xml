@@ -23,9 +23,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="696f5730-7651-4595-89fa-296b3ee46a3d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Networking_Alteruna/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Networking_Alteruna/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Networking_Alteruna/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Networking_Alteruna/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MarcusScenes/MarcusTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MarcusScenes/MarcusTest.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerEventDispatcher.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerEventDispatcher.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement/PepsiJetpack.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement/PepsiJetpack.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/PlayerInputManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/PlayerInputManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,25 +38,19 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.6.1/Editor/VisualScripting.Core/Documentation/XmlDocumentation.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Experimental/PlayerInputSync.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/PlayerInputManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Experimental/MoveOnInput.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.6.1/Runtime/VisualScripting.Core/Unity/Singleton.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerMovement/PlayerMovementSync.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.6.1/Editor/VisualScripting.Core/Documentation/XmlDocumentation.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/PlayerInputManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Experimental/MoveOnInput.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/PlayerInputManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Benes grejer lmao/QuakeMovementScript.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerMovement/PlayerMovementSync.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/HealthComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponBase.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PepsiChainGun.cs" />
-      </list>
-    </option>
+    <changedPaths>
+      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerEventDispatcher.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerMovement/PepsiJetpack.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/PlayerInputManager.cs" />
+    </changedPaths>
   </component>
   <component name="ProjectId" id="21GhD8yhZNI4vOUDRxALtS8JZVp" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -76,7 +71,7 @@
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
       <option name="selectedOptions">
-        <set />
+        <list />
       </option>
       <method v="2" />
     </configuration>
@@ -85,7 +80,7 @@
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
       <option name="selectedOptions">
-        <set />
+        <list />
       </option>
       <method v="2" />
     </configuration>
@@ -138,14 +133,7 @@
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/WeaponManager.cs</url>
           <line>25</line>
-          <properties documentPath="C:\Users\Johan.Liljedahl\Documents\Unity Projects\BeneFager_TheGame\Networking_Alteruna\Assets\Scripts\WeaponManager.cs" initialLine="25">
-            <startOffsets>
-              <option value="472" />
-            </startOffsets>
-            <endOffsets>
-              <option value="558" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="C:\Users\Johan.Liljedahl\Documents\Unity Projects\BeneFager_TheGame\Networking_Alteruna\Assets\Scripts\WeaponManager.cs" initialLine="25" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
