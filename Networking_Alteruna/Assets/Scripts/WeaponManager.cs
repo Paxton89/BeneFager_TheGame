@@ -23,7 +23,15 @@ public class WeaponManager : MonoBehaviour
 
     private void Start()
     {
-        UI_AmmoValue.GetComponent<Text>().text = weapons[_weaponIndex].currentAmmo.ToString();
+        if (_weaponIndex == 0)
+        {
+            var unlimited = "!";
+            UI_AmmoValue.GetComponent<Text>().text = unlimited;
+        }
+        else
+        {
+            UI_AmmoValue.GetComponent<Text>().text = weapons[_weaponIndex].currentAmmo.ToString();   
+        }
     }
 
     public void RecieveUpdate()
@@ -36,20 +44,31 @@ public class WeaponManager : MonoBehaviour
                 _weaponIndex = weapons.Length - 1;
 
             _weaponIndex %= weapons.Length;
-            
-            UI_AmmoValue.GetComponent<Text>().text = weapons[_weaponIndex].currentAmmo.ToString();
+
+            if (_weaponIndex == 0)
+            {
+                var unlimited = "!";
+                UI_AmmoValue.GetComponent<Text>().text = unlimited.ToString();
+            }
+            else
+            {
+                UI_AmmoValue.GetComponent<Text>().text = weapons[_weaponIndex].currentAmmo.ToString();   
+            }
             _timeOfLastShot = time;
         }
 
         if (Input.GetMouseButton(0))
         {
             WeaponBase weapon = weapons[_weaponIndex];
-            if (time - _timeOfLastShot > weapon.weaponCooldown && weapon.currentAmmo >= weapon.ammoConsumption)
+            if ((time - _timeOfLastShot > weapon.weaponCooldown && weapon.currentAmmo >= weapon.ammoConsumption) || _weaponIndex == 0 && time - _timeOfLastShot > weapon.weaponCooldown)
             {
                 _timeOfLastShot = time;
                 weapon.Shoot();
-                weapon.currentAmmo -= weapon.ammoConsumption;
-                UI_AmmoValue.GetComponent<Text>().text = weapon.currentAmmo.ToString();
+                if (_weaponIndex != 0)
+                {
+                    weapon.currentAmmo -= weapon.ammoConsumption;
+                    UI_AmmoValue.GetComponent<Text>().text = weapon.currentAmmo.ToString(); 
+                }
             }
         }
     }
