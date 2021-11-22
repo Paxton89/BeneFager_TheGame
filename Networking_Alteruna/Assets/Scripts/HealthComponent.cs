@@ -9,6 +9,8 @@ public class HealthComponent : MonoBehaviour
     public float maxHealth = 100;
     public float currentHealth;
 
+	public GameObject Ragdoll;
+
     private Quaternion deadRotation;
     private void Start()
     {
@@ -28,8 +30,11 @@ public class HealthComponent : MonoBehaviour
     
     private void Die()
     {
-        //Ragdoll here
+		//Ragdoll here
+		var spawnedRagdoll = Instantiate(Ragdoll, transform.position, transform.rotation);
         Debug.Log(gameObject.name + " DIED" );
+
+
     }
 
     private void OnMouseDown()
