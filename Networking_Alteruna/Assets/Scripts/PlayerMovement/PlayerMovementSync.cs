@@ -1,9 +1,9 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 // Contains the command the user wishes upon the character
-struct Cmd
+struct CmdSync
 {
     public float forwardMove;
     public float rightMove;
@@ -11,7 +11,7 @@ struct Cmd
 }
 
 [RequireComponent(typeof(CharacterController))]
-public class QuakeMovementScript : MonoBehaviour
+public class PlayerMovementSync : MonoBehaviour
 {
     public Transform playerView;     // Camera
     public float playerViewYOffset = 0.6f; // The height at which the camera is bound to
@@ -24,7 +24,6 @@ public class QuakeMovementScript : MonoBehaviour
     public float friction = 6; //Ground friction
 
     /* Movement stuff */
-    public bool canMove = true;
     public float moveSpeed = 7.0f;                // Ground move speed
     public float runAcceleration = 14.0f;         // Ground accel
     public float runDeacceleration = 10.0f;       // Deacceleration that occurs when running on the ground
@@ -63,11 +62,12 @@ public class QuakeMovementScript : MonoBehaviour
     private float playerFriction = 0.0f;
 
     // Player commands, stores wish commands that the player asks for (Forward, back, jump, etc)
-    private Cmd _cmd;
+    private CmdSync _cmd;
 
-    private void Start()
+    public void OnJoin()
     {
         // Hide the cursor
+        
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
 
@@ -77,7 +77,10 @@ public class QuakeMovementScript : MonoBehaviour
             if (mainCamera != null)
                 playerView = mainCamera.gameObject.transform;
         }
-
+    }
+    
+    private void Start()
+    {
         // Put the camera inside the capsule collider
         playerView.position = new Vector3(
             transform.position.x,
@@ -87,7 +90,7 @@ public class QuakeMovementScript : MonoBehaviour
         _controller = GetComponent<CharacterController>();
     }
 
-    private void Update()
+    public void RecieveUpdate()
     {
         // Do FPS calculation
         frameCount++;
@@ -115,11 +118,8 @@ public class QuakeMovementScript : MonoBehaviour
         else if (rotX > 90)
             rotX = 90;
 
-        if (canMove)
-        {
-            this.transform.rotation = Quaternion.Euler(0, rotY, 0); // Rotates the collider
-            playerView.rotation = Quaternion.Euler(rotX, rotY, 0); // Rotates the camera   
-        }
+        this.transform.rotation = Quaternion.Euler(0, rotY, 0); // Rotates the collider
+        playerView.rotation = Quaternion.Euler(rotX, rotY, 0); // Rotates the camera
 
         /* Movement, here's the important part */
         QueueJump();
@@ -163,19 +163,16 @@ public class QuakeMovementScript : MonoBehaviour
      */
     private void QueueJump()
     {
-        if (canMove)
+        if (holdJumpToBhop)
         {
-            if (holdJumpToBhop)
-            {
-                wishJump = Input.GetButton("Jump");
-                return;
-            }
-
-            if (Input.GetButtonDown("Jump") && !wishJump)
-                wishJump = true;
-            if (Input.GetButtonUp("Jump"))
-                wishJump = false;   
+            wishJump = Input.GetButton("Jump");
+            return;
         }
+
+        if (Input.GetButtonDown("Jump") && !wishJump)
+            wishJump = true;
+        if (Input.GetButtonUp("Jump"))
+            wishJump = false;
     }
 
     /**
@@ -212,7 +209,7 @@ public class QuakeMovementScript : MonoBehaviour
             accel = sideStrafeAcceleration;
         }
 
-        if(canMove)Accelerate(wishdir, wishspeed, accel);
+        Accelerate(wishdir, wishspeed, accel);
         if (airControl > 0)
             AirControl(wishdir, wishspeed2);
         // !CPM: Aircontrol
@@ -285,7 +282,7 @@ public class QuakeMovementScript : MonoBehaviour
         var wishspeed = wishdir.magnitude;
         wishspeed *= moveSpeed;
 
-        if(canMove)Accelerate(wishdir, wishspeed, runAcceleration);
+        Accelerate(wishdir, wishspeed, runAcceleration);
 
         // Reset the gravity velocity
         playerVelocity.y = -gravity * Time.deltaTime;
