@@ -30,13 +30,13 @@ public class HealthComponent : MonoBehaviour
     {
         //Ragdoll here
         Debug.Log(gameObject.name + " DIED" );
-        GetComponentInParent<QuakeMovementScript>().canMove = false;
+        GetComponentInParent<PlayerMovementSync>().canMove = false;
     }
 
     public void OnRespawn()
     {
         currentHealth = maxHealth;
-        GetComponentInParent<QuakeMovementScript>().canMove = true;
+        GetComponentInParent<PlayerMovementSync>().canMove = true;
     }
     private void OnMouseDown()
     {

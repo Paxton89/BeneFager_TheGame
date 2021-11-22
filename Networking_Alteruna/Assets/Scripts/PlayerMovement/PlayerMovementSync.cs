@@ -24,6 +24,7 @@ public class PlayerMovementSync : MonoBehaviour
     public float friction = 6; //Ground friction
 
     /* Movement stuff */
+    public bool canMove = true;
     public float moveSpeed = 7.0f;                // Ground move speed
     public float runAcceleration = 14.0f;         // Ground accel
     public float runDeacceleration = 10.0f;       // Deacceleration that occurs when running on the ground
@@ -118,8 +119,11 @@ public class PlayerMovementSync : MonoBehaviour
         else if (rotX > 90)
             rotX = 90;
 
-        this.transform.rotation = Quaternion.Euler(0, rotY, 0); // Rotates the collider
-        playerView.rotation = Quaternion.Euler(rotX, rotY, 0); // Rotates the camera
+        if (canMove)
+        {
+            this.transform.rotation = Quaternion.Euler(0, rotY, 0); // Rotates the collider
+            playerView.rotation = Quaternion.Euler(rotX, rotY, 0); // Rotates the camera   
+        }
 
         /* Movement, here's the important part */
         QueueJump();
@@ -154,8 +158,11 @@ public class PlayerMovementSync : MonoBehaviour
      */
     private void SetMovementDir()
     {
-        _cmd.forwardMove = Input.GetAxisRaw("Vertical");
-        _cmd.rightMove = Input.GetAxisRaw("Horizontal");
+        if (canMove)
+        {
+            _cmd.forwardMove = Input.GetAxisRaw("Vertical");
+            _cmd.rightMove = Input.GetAxisRaw("Horizontal");   
+        }
     }
 
     /**
@@ -163,16 +170,19 @@ public class PlayerMovementSync : MonoBehaviour
      */
     private void QueueJump()
     {
-        if (holdJumpToBhop)
+        if (canMove)
         {
-            wishJump = Input.GetButton("Jump");
-            return;
-        }
+            if (holdJumpToBhop)
+            {
+                wishJump = Input.GetButton("Jump");
+                return;
+            }
 
-        if (Input.GetButtonDown("Jump") && !wishJump)
-            wishJump = true;
-        if (Input.GetButtonUp("Jump"))
-            wishJump = false;
+            if (Input.GetButtonDown("Jump") && !wishJump)
+                wishJump = true;
+            if (Input.GetButtonUp("Jump"))
+                wishJump = false;   
+        }
     }
 
     /**
@@ -208,7 +218,7 @@ public class PlayerMovementSync : MonoBehaviour
                 wishspeed = sideStrafeSpeed;
             accel = sideStrafeAcceleration;
         }
-
+        
         Accelerate(wishdir, wishspeed, accel);
         if (airControl > 0)
             AirControl(wishdir, wishspeed2);
