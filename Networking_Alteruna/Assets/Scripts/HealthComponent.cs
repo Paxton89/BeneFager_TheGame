@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HealthComponent : MonoBehaviour
 {
@@ -22,8 +23,9 @@ public class HealthComponent : MonoBehaviour
     
     public void TakeDamage(float damage)
     {
-        currentHealth -= damage;
+        int newHealth = (int)(currentHealth -= damage);
         Debug.Log("oof! " + gameObject.name + " took " + damage + " points of dmg!" );
+
         hpValue.GetComponent<Text>().text = newHealth.ToString();
         if (currentHealth <= 0)
         {
