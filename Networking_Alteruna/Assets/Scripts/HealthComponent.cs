@@ -9,11 +9,13 @@ public class HealthComponent : MonoBehaviour
     public float maxHealth = 100;
     public float currentHealth;
 
+    private Quaternion deadRotation;
     private void Start()
     {
+        deadRotation = new Quaternion(-90,0,0,0);
         currentHealth = maxHealth;
     }
-
+    
     private void TakeDamage(float damage)
     {
         currentHealth -= damage;
@@ -23,9 +25,10 @@ public class HealthComponent : MonoBehaviour
             Die();
         }
     }
-
+    
     private void Die()
     {
+        //Ragdoll here
         Debug.Log(gameObject.name + " DIED" );
     }
 

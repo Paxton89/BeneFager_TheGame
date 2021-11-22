@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="696f5730-7651-4595-89fa-296b3ee46a3d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Floor.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Floor.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Networking_Alteruna/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Networking_Alteruna/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Johan.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Johan.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefab/Player capsule.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/Player capsule.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/HealthComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/HealthComponent.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +62,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1637573220720</updated>
-      <workItem from="1637573227983" duration="1250000" />
+      <workItem from="1637573227983" duration="2967000" />
     </task>
     <servers />
   </component>
