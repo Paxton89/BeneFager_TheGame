@@ -8,13 +8,15 @@ public class PlayerInputManager : MonoBehaviour
     [SerializeField] private List<PlayerMovementSync> players;
 
     private PlayerMovementSync myPlayer;
-    
+    private WeaponManager myWeapons;
+
 
     void Update()
     {
-        if (myPlayer)
+        if (myPlayer && myWeapons)
         {
             myPlayer.RecieveUpdate();
+            myWeapons.RecieveUpdate();
         } 
     }
 
@@ -26,6 +28,7 @@ public class PlayerInputManager : MonoBehaviour
             return;
         }
         myPlayer = players[id];
+        myWeapons = players[id].gameObject.GetComponentInChildren<WeaponManager>();
         myPlayer.OnJoin();
     }
 }

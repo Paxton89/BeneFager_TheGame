@@ -407,6 +407,7 @@ MonoBehaviour:
   initialForce: 40
   forceMode: 1
   damageToApply: 1
-  particleToSpawn: {fileID: 0}
+  particleToSpawn: {fileID: 5693802598247578642, guid: cee233a58108e714b90580e0e6f115c7, type: 3}
   explosionForce: 5
   explosionForceMode: 1
+  explosionDelay: 0.5
