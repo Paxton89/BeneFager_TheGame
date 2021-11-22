@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using Alteruna.Trinity;
 using UnityEngine;
@@ -22,8 +21,13 @@ public class MoveOnInput : MonoBehaviour
         }
     }
 
-    public void PlayerJoined(AlterunaTrinity instance, Session session, IDevice device, UInt16 ID)
+    public void PlayerJoined(AlterunaTrinity instance, Session session, IDevice device, UInt16 id)
     {
-        myPlayer = Players[ID];
+        if (id > Players.Count)
+        {
+            Debug.LogError("Too many players joined");
+            return;
+        }
+        myPlayer = Players[id];
     }
 }
