@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &265756505 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2481649508904034450, guid: e03f368111967cc4b815b1371533f7c2, type: 3}
+  m_PrefabInstance: {fileID: 355968252}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &355968252
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -130,17 +135,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1229589115, guid: e03f368111967cc4b815b1371533f7c2, type: 3}
-      propertyPath: m_Color.b
-      value: 1
+    - target: {fileID: 1699279550151663931, guid: e03f368111967cc4b815b1371533f7c2, type: 3}
+      propertyPath: m_Text
+      value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 1229589115, guid: e03f368111967cc4b815b1371533f7c2, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1229589115, guid: e03f368111967cc4b815b1371533f7c2, type: 3}
-      propertyPath: m_Color.r
-      value: 1
+    - target: {fileID: 4384146160866900289, guid: e03f368111967cc4b815b1371533f7c2, type: 3}
+      propertyPath: m_Text
+      value: Health
       objectReference: {fileID: 0}
     - target: {fileID: 4384146161673386864, guid: e03f368111967cc4b815b1371533f7c2, type: 3}
       propertyPath: m_Name
@@ -228,6 +229,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4384146161673386876, guid: e03f368111967cc4b815b1371533f7c2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902140707840412945, guid: e03f368111967cc4b815b1371533f7c2, type: 3}
+      propertyPath: m_Text
+      value: Pepsi
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902140707840412945, guid: e03f368111967cc4b815b1371533f7c2, type: 3}
+      propertyPath: m_FontData.m_LineSpacing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7105311528244397926, guid: e03f368111967cc4b815b1371533f7c2, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7105311528244397926, guid: e03f368111967cc4b815b1371533f7c2, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7105311528244397926, guid: e03f368111967cc4b815b1371533f7c2, type: 3}
+      propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -661,6 +682,18 @@ PrefabInstance:
     - target: {fileID: 367090610954153055, guid: c344372a3d1527141a68ee66aaeebc79, type: 3}
       propertyPath: m_Name
       value: KristerSync
+      objectReference: {fileID: 0}
+    - target: {fileID: 573206038007723470, guid: c344372a3d1527141a68ee66aaeebc79, type: 3}
+      propertyPath: UI_AmmoValue
+      value: 
+      objectReference: {fileID: 265756505}
+    - target: {fileID: 1419229687800868091, guid: c344372a3d1527141a68ee66aaeebc79, type: 3}
+      propertyPath: maxAmmo
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 1419229687800868091, guid: c344372a3d1527141a68ee66aaeebc79, type: 3}
+      propertyPath: ammoConsumption
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2689556580320777924, guid: c344372a3d1527141a68ee66aaeebc79, type: 3}
       propertyPath: canMove

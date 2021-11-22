@@ -7,8 +7,9 @@ public class PepsiChainGun : PhysicsWeapon
 
 	private SpawnerSynchronizable _spawner;
 
-	private void Awake()
+	protected virtual void Awake()
 	{
+		base.Awake();
 		_spawner = GetComponent<SpawnerSynchronizable>();
 	}
 

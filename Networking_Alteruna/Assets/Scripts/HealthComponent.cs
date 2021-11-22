@@ -14,9 +14,8 @@ public class HealthComponent : MonoBehaviour
 	public GameObject KristerRagdoll;
 	public MeshRenderer KristerRenderer;
 	public Collider KristerCollider;
-
-    private Quaternion deadRotation;
-    private void Start()
+	
+	private void Start()
     {
         currentHealth = maxHealth;
     }
