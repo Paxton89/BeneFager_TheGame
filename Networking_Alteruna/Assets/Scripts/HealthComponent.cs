@@ -8,6 +8,7 @@ public class HealthComponent : MonoBehaviour
 
     public float maxHealth = 100;
     public float currentHealth;
+    public GameObject hpValue;
 
 	public GameObject KristerRagdoll;
 	public MeshRenderer KristerRenderer;
@@ -16,7 +17,6 @@ public class HealthComponent : MonoBehaviour
     private Quaternion deadRotation;
     private void Start()
     {
-        deadRotation = new Quaternion(-90,0,0,0);
         currentHealth = maxHealth;
     }
     
@@ -24,6 +24,7 @@ public class HealthComponent : MonoBehaviour
     {
         currentHealth -= damage;
         Debug.Log("oof! " + gameObject.name + " took " + damage + " points of dmg!" );
+        hpValue.GetComponent<Text>().text = newHealth.ToString();
         if (currentHealth <= 0)
         {
             Die();
