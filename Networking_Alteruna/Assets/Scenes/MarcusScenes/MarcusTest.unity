@@ -545,7 +545,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 367090610954153045, guid: c344372a3d1527141a68ee66aaeebc79, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.87
+      value: -2.93
       objectReference: {fileID: 0}
     - target: {fileID: 367090610954153045, guid: c344372a3d1527141a68ee66aaeebc79, type: 3}
       propertyPath: m_LocalPosition.y
@@ -553,7 +553,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 367090610954153045, guid: c344372a3d1527141a68ee66aaeebc79, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.5635586
+      value: -7.77
       objectReference: {fileID: 0}
     - target: {fileID: 367090610954153045, guid: c344372a3d1527141a68ee66aaeebc79, type: 3}
       propertyPath: m_LocalRotation.w
@@ -586,6 +586,14 @@ PrefabInstance:
     - target: {fileID: 367090610954153055, guid: c344372a3d1527141a68ee66aaeebc79, type: 3}
       propertyPath: m_Name
       value: KristerSync (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 367090610954153055, guid: c344372a3d1527141a68ee66aaeebc79, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4554579530091660993, guid: c344372a3d1527141a68ee66aaeebc79, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5327584164048865359, guid: c344372a3d1527141a68ee66aaeebc79, type: 3}
       propertyPath: UIDString
