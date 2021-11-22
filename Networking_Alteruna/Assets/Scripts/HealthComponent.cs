@@ -30,11 +30,6 @@ public class HealthComponent : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
-    {
-        TakeDamage(1);
-    }
-
     private void Die()
     {
         //Ragdoll here
