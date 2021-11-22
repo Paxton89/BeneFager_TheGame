@@ -9,6 +9,10 @@ public class HealthComponent : MonoBehaviour
     public float maxHealth = 100;
     public float currentHealth;
 
+	public GameObject KristerRagdoll;
+	public MeshRenderer KristerRenderer;
+	public Collider KristerCollider;
+
     private Quaternion deadRotation;
     private void Start()
     {
@@ -28,16 +32,34 @@ public class HealthComponent : MonoBehaviour
     
     private void Die()
     {
-        //Ragdoll here
+		//Ragdoll here
         Debug.Log(gameObject.name + " DIED" );
         GetComponentInParent<PlayerMovementSync>().canMove = false;
+		ActivateRagdoll();
+
     }
 
     public void OnRespawn()
     {
         currentHealth = maxHealth;
         GetComponentInParent<PlayerMovementSync>().canMove = true;
+		DeactivateRagdoll();
     }
+
+	private void ActivateRagdoll()
+	{
+		KristerRagdoll.transform.position = transform.position;
+		KristerRagdoll.SetActive(true);
+		KristerRenderer.enabled = false;
+		KristerCollider.enabled = false;
+	}
+
+	private void DeactivateRagdoll()
+	{
+		KristerRagdoll.SetActive(false);
+		KristerRenderer.enabled = true;
+		KristerCollider.enabled = true;
+	}
     private void OnMouseDown()
     {
         //TakeDamage(10);
