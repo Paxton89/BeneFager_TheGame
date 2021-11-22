@@ -28,10 +28,10 @@ public class Shot : MonoBehaviour
 		HealthComponent health = other.GetComponent<HealthComponent>();
 		Rigidbody rb = other.GetComponent<Rigidbody>();
 
-		if (health)
-		{
-			health.TakeDamage(damageToApply);
-		}
+		if (!health)
+			return;
+		
+		health.TakeDamage(damageToApply);
 
 		if (rb && explosionForce > 0f)
 		{
