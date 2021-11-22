@@ -9,8 +9,6 @@ public class HealthComponent : MonoBehaviour
     public float maxHealth = 100;
     public float currentHealth;
 
-	public GameObject Ragdoll;
-
     private Quaternion deadRotation;
     private void Start()
     {
@@ -18,7 +16,7 @@ public class HealthComponent : MonoBehaviour
         currentHealth = maxHealth;
     }
     
-    private void TakeDamage(float damage)
+    public void TakeDamage(float damage)
     {
         currentHealth -= damage;
         Debug.Log("oof! " + gameObject.name + " took " + damage + " points of dmg!" );
@@ -30,15 +28,18 @@ public class HealthComponent : MonoBehaviour
     
     private void Die()
     {
-		//Ragdoll here
-		var spawnedRagdoll = Instantiate(Ragdoll, transform.position, transform.rotation);
+        //Ragdoll here
         Debug.Log(gameObject.name + " DIED" );
-
-
+        GetComponentInParent<QuakeMovementScript>().canMove = false;
     }
 
+    public void OnRespawn()
+    {
+        currentHealth = maxHealth;
+        GetComponentInParent<QuakeMovementScript>().canMove = true;
+    }
     private void OnMouseDown()
     {
-        TakeDamage(10);
+        //TakeDamage(10);
     }
 }
