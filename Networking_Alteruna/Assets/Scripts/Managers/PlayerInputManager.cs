@@ -9,10 +9,11 @@ public class PlayerInputManager : MonoBehaviour
     
     [SerializeField] private List<PlayerMovementSync> players;
 
-    private PlayerMovementSync myPlayer;
-    private WeaponManager myWeapons;
-    private Action onPlayerJoined;
-    private Action onUpdate;
+    public PlayerMovementSync MyPlayer { get; private set; }
+    public WeaponManager MyWeapons { get; private set; }
+    
+    public Action onPlayerJoined;
+    public Action onUpdate;
 
     private void Awake()
     {
@@ -24,10 +25,10 @@ public class PlayerInputManager : MonoBehaviour
 
     void Update()
     {
-        if (myPlayer && myWeapons)
+        if (MyPlayer && MyWeapons)
         {
-            myPlayer.RecieveUpdate();
-            myWeapons.RecieveUpdate();
+            MyPlayer.RecieveUpdate();
+            MyWeapons.RecieveUpdate();
             onUpdate?.Invoke();
         } 
     }
@@ -39,9 +40,9 @@ public class PlayerInputManager : MonoBehaviour
             Debug.LogError("Too many players joined");
             return;
         }
-        myPlayer = players[id];
-        myWeapons = players[id].gameObject.GetComponentInChildren<WeaponManager>();
-        myPlayer.OnJoin();
+        MyPlayer = players[id];
+        MyWeapons = players[id].gameObject.GetComponentInChildren<WeaponManager>();
+        MyPlayer.OnJoin();
         onPlayerJoined?.Invoke();
     }
 }
