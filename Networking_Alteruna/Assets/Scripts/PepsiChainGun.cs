@@ -1,12 +1,20 @@
 ﻿using UnityEngine;
 
+[RequireComponent(typeof(SpawnerSynchronizable))]
 public class PepsiChainGun : PhysicsWeapon
 {
-	public GameObject pepsi;
+	public Vector3 scale = new Vector3(0.5f, 0.5f, 0.5f);
+
+	private SpawnerSynchronizable _spawner;
+
+	private void Awake()
+	{
+		_spawner = GetComponent<SpawnerSynchronizable>();
+	}
 
 	public override void Shoot()
 	{
 		base.Shoot();
-		GameObject currentBullet = Instantiate(pepsi, weaponOutput.position, Quaternion.LookRotation(weaponOutput.forward, weaponOutput.up));
+		_spawner.Spawn(weaponOutput.position, Quaternion.LookRotation(weaponOutput.forward, weaponOutput.up), scale);
 	}
 }

@@ -549,10 +549,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: KristerSync (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 5327584164048865359, guid: c344372a3d1527141a68ee66aaeebc79, type: 3}
-      propertyPath: UIDString
-      value: b9e6044a-f6fb-41df-af8c-9054a5afbfeb
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c344372a3d1527141a68ee66aaeebc79, type: 3}
 --- !u!1 &2061981138
