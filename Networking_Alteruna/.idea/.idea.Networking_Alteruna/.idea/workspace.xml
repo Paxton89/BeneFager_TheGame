@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="696f5730-7651-4595-89fa-296b3ee46a3d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Floor.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Floor.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Johan.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Johan.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefab/Player capsule.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/Player capsule.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +62,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1637573220720</updated>
-      <workItem from="1637573227983" duration="655000" />
+      <workItem from="1637573227983" duration="1250000" />
     </task>
     <servers />
   </component>
