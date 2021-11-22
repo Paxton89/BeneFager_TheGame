@@ -535,6 +535,10 @@ PrefabInstance:
       propertyPath: hpValue
       value: 
       objectReference: {fileID: 1253966459}
+    - target: {fileID: 1106924734, guid: c344372a3d1527141a68ee66aaeebc79, type: 3}
+      propertyPath: maxHealth
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 367090610954153045, guid: c344372a3d1527141a68ee66aaeebc79, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -864,6 +868,10 @@ PrefabInstance:
       propertyPath: hpValue
       value: 
       objectReference: {fileID: 1253966459}
+    - target: {fileID: 1106924734, guid: c344372a3d1527141a68ee66aaeebc79, type: 3}
+      propertyPath: maxHealth
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 367090610954153045, guid: c344372a3d1527141a68ee66aaeebc79, type: 3}
       propertyPath: m_RootOrder
       value: 0
