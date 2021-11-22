@@ -10,7 +10,6 @@ public class PepsiChainGun : PhysicsWeapon
 	private void Awake()
 	{
 		_spawner = GetComponent<SpawnerSynchronizable>();
-		_spawner.SpawnableObject = pepsi;
 	}
 
 	public override void Shoot()
