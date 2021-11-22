@@ -233,6 +233,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1952545297635202273}
   - component: {fileID: 1419229687800868091}
+  - component: {fileID: 5327584164048865359}
+  - component: {fileID: 5152979262230764761}
   m_Layer: 0
   m_Name: PepsiGun
   m_TagString: Untagged
@@ -269,6 +271,34 @@ MonoBehaviour:
   weaponOutput: {fileID: 1952545297635202273}
   weaponCooldown: 0.1
   pepsi: {fileID: 9040977111743465903, guid: 460140f31993a6b4dbeda3ef464c97aa, type: 3}
+--- !u!114 &5327584164048865359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2851444419262867949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85e6c98ba9a8f7a4e98c6776becb1385, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIDString: aad17303-2dea-4867-891d-73eee5effc86
+--- !u!114 &5152979262230764761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2851444419262867949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b68ee4a386ec4c742ae433768397d59a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mUID: {fileID: 0}
+  mSynchronizableManager: {fileID: 0}
+  SpawnableObject: {fileID: 9040977111743465903, guid: 460140f31993a6b4dbeda3ef464c97aa, type: 3}
 --- !u!1 &4554579530091660993
 GameObject:
   m_ObjectHideFlags: 0
