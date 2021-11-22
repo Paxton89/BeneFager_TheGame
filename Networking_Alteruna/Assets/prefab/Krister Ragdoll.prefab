@@ -335,6 +335,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1782501481391045032}
+  - component: {fileID: 8475070204517087620}
+  - component: {fileID: 583784586525473855}
   m_Layer: 0
   m_Name: Krister Ragdoll
   m_TagString: Untagged
@@ -358,6 +360,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8475070204517087620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438731905651172114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85e6c98ba9a8f7a4e98c6776becb1385, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIDString: 07003f27-6e3c-4883-a276-e5897ad31e17
+--- !u!114 &583784586525473855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438731905651172114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 419044158adc5b34388f28206e821cc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mUID: {fileID: 0}
+  mSynchronizableManager: {fileID: 0}
 --- !u!1 &1774106028344219156
 GameObject:
   m_ObjectHideFlags: 0
