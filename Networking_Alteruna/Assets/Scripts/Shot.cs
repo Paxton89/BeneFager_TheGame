@@ -10,6 +10,8 @@ public class Shot : MonoBehaviour
 	public float explosionForce;
 	public ForceMode explosionForceMode;
 	public float explosionDelay = 0.5f;
+
+	[HideInInspector] public ObjectPool _pool;
 	
 	private Transform _tf;
 	private Rigidbody _rb;
@@ -18,9 +20,10 @@ public class Shot : MonoBehaviour
 	{
 		_tf = transform;
 		_rb = GetComponent<Rigidbody>();
+		gameObject.SetActive(false);
 	}
 
-	private void Start()
+	private void OnEnable()
 	{
 		_rb.AddForce(initialForce * _tf.forward, forceMode);
 		StartCoroutine(ExplodeRoutine());
@@ -56,6 +59,8 @@ public class Shot : MonoBehaviour
 			Instantiate(particleToSpawn, _tf.position, _tf.rotation);
 		
 		StopAllCoroutines();
-		Destroy(gameObject);
+		_rb.velocity = Vector3.zero;
+		_pool.ReturnObject(gameObject);
+		gameObject.SetActive(false);
 	}
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Alteruna.Trinity;
 using UnityEngine;
 
+[DefaultExecutionOrder(-1)]
 public class PlayerInputManager : MonoBehaviour
 {
     public static PlayerInputManager Instance;
@@ -11,6 +12,7 @@ public class PlayerInputManager : MonoBehaviour
 
     public PlayerMovementSync MyPlayer { get; private set; }
     public WeaponManager MyWeapons { get; private set; }
+    public UInt16 MyPlayerId { get; private set; }
     
     public Action onPlayerJoined;
     public Action onUpdate;
@@ -40,8 +42,10 @@ public class PlayerInputManager : MonoBehaviour
             Debug.LogError("Too many players joined");
             return;
         }
+
+        MyPlayerId = id;
         MyPlayer = players[id];
-        MyWeapons = players[id].gameObject.GetComponentInChildren<WeaponManager>();
+        MyWeapons = MyPlayer.gameObject.GetComponentInChildren<WeaponManager>();
         MyPlayer.OnJoin();
         onPlayerJoined?.Invoke();
     }

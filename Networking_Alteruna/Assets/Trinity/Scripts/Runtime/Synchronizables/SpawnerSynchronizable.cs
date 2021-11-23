@@ -89,6 +89,11 @@ public class SpawnerSynchronizable : Synchronizable
         Commit();
     }
 
+    public List<GameObject> GetObjects()
+    {
+        return mSpawnedObjects;
+    }
+
     [ContextMenu("Test Spawn")]
     private void Test()
     {

@@ -337,6 +337,8 @@ GameObject:
   - component: {fileID: 658838763127513206}
   - component: {fileID: 7333471410393252790}
   - component: {fileID: 5981695187390651915}
+  - component: {fileID: 1407018212949042861}
+  - component: {fileID: 2207638806609699532}
   m_Layer: 0
   m_Name: Pepsi bullet
   m_TagString: Untagged
@@ -411,3 +413,31 @@ MonoBehaviour:
   explosionForce: 5
   explosionForceMode: 1
   explosionDelay: 0.5
+  _pool: {fileID: 0}
+--- !u!114 &1407018212949042861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9040977111743465903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85e6c98ba9a8f7a4e98c6776becb1385, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIDString: 30515199-c69c-411c-8748-ffee203dbc21
+--- !u!114 &2207638806609699532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9040977111743465903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69836e27ebf148bfaefc7431328f9a5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mUID: {fileID: 0}
+  mSynchronizableManager: {fileID: 0}

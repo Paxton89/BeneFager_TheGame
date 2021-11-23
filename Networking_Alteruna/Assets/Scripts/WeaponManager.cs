@@ -23,6 +23,9 @@ public class WeaponManager : MonoBehaviour
 
     private void Start()
     {
+        if (!UI_AmmoValue)
+            return;
+        
         if (_weaponIndex == 0)
         {
             var unlimited = "!";
@@ -45,15 +48,17 @@ public class WeaponManager : MonoBehaviour
 
             _weaponIndex %= weapons.Length;
 
-            if (_weaponIndex == 0)
-            {
-                var unlimited = "!";
-                UI_AmmoValue.GetComponent<Text>().text = unlimited.ToString();
-            }
-            else
-            {
-                UI_AmmoValue.GetComponent<Text>().text = weapons[_weaponIndex].currentAmmo.ToString();   
-            }
+            if(UI_AmmoValue)
+                if (_weaponIndex == 0)
+                {
+                    var unlimited = "!";
+                    UI_AmmoValue.GetComponent<Text>().text = unlimited.ToString();
+                }
+                else
+                {
+                    UI_AmmoValue.GetComponent<Text>().text = weapons[_weaponIndex].currentAmmo.ToString();   
+                }
+            
             _timeOfLastShot = time;
         }
 
@@ -67,7 +72,8 @@ public class WeaponManager : MonoBehaviour
                 if (_weaponIndex != 0)
                 {
                     weapon.currentAmmo -= weapon.ammoConsumption;
-                    UI_AmmoValue.GetComponent<Text>().text = weapon.currentAmmo.ToString(); 
+                    if(UI_AmmoValue)
+                        UI_AmmoValue.GetComponent<Text>().text = weapon.currentAmmo.ToString(); 
                 }
             }
         }
