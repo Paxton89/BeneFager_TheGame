@@ -8,7 +8,7 @@ public class PepsiChainGun : PhysicsWeapon
 	private SpawnerSynchronizable _spawner;
 	private ObjectPool _pool;
 
-	protected virtual void Awake()
+	protected override void Awake()
 	{
 		base.Awake();
 		_spawner = GetComponent<SpawnerSynchronizable>();
@@ -18,10 +18,15 @@ public class PepsiChainGun : PhysicsWeapon
 	public override void Shoot()
 	{
 		base.Shoot();
-		GameObject shot = _pool.GetObject();
+		GameObject obj = _pool.GetObject();
+		if (!obj)
+			return;
+		
+		Shot shot = obj.transform.GetChild(0).GetComponent<Shot>();
 		shot.transform.position = weaponOutput.position;
 		shot.transform.rotation = Quaternion.LookRotation(weaponOutput.forward, weaponOutput.up);
 		shot.transform.localScale = scale;
-		shot.SetActive(true);
+		shot.pool = _pool;
+		shot.gameObject.SetActive(true);
 	}
 }

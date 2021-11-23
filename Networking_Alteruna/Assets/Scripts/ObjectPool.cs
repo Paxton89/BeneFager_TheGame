@@ -37,6 +37,9 @@ public class ObjectPool : MonoBehaviour
 
 	public GameObject GetObject()
 	{
+		if (_playerId != PlayerInputManager.Instance.MyPlayerId)
+			return null;
+		
 		int index = _availableIndices[0];
 		_availableIndices.RemoveAt(0);
 		GameObject obj = _spawner.GetObjects()[_playerId * objectsPerPlayer + index];
@@ -47,6 +50,9 @@ public class ObjectPool : MonoBehaviour
 
 	public void ReturnObject(GameObject obj)
 	{
+		if (_playerId != PlayerInputManager.Instance.MyPlayerId)
+			return;
+		
 		if (!_usedIndices.ContainsKey(obj))
 		{
 			Debug.LogWarning("Tried to return object but it hasn't been claimed");

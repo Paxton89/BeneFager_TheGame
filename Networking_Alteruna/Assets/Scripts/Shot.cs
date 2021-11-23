@@ -11,7 +11,7 @@ public class Shot : MonoBehaviour
 	public ForceMode explosionForceMode;
 	public float explosionDelay = 0.5f;
 
-	[HideInInspector] public ObjectPool _pool;
+	[HideInInspector] public ObjectPool pool;
 	
 	private Transform _tf;
 	private Rigidbody _rb;
@@ -60,7 +60,7 @@ public class Shot : MonoBehaviour
 		
 		StopAllCoroutines();
 		_rb.velocity = Vector3.zero;
-		_pool.ReturnObject(gameObject);
+		pool.ReturnObject(transform.parent.gameObject);
 		gameObject.SetActive(false);
 	}
 }

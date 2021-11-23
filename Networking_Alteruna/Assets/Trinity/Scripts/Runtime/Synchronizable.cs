@@ -134,7 +134,7 @@ namespace Alteruna.Trinity
             mSynchronizableManager = manager;
         }
 
-        protected virtual void OnEnable()
+        private void OnEnable()
         {
             mUID = GetComponent<UniqueID>();
 

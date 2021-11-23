@@ -25,7 +25,9 @@ public class HealthComponent : MonoBehaviour
         int newHealth = (int)(currentHealth -= damage);
         Debug.Log("oof! " + gameObject.name + " took " + damage + " points of dmg!" );
 
-        hpValue.GetComponent<Text>().text = newHealth.ToString();
+        if(hpValue)
+			hpValue.GetComponent<Text>().text = newHealth.ToString();
+        
         if (currentHealth <= 0)
         {
             Die();
