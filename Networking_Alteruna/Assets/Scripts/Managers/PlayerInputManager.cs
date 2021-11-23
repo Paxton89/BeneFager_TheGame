@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using Alteruna.Trinity;
 using UnityEngine;
 
@@ -7,8 +6,7 @@ using UnityEngine;
 public class PlayerInputManager : MonoBehaviour
 {
     public static PlayerInputManager Instance;
-    
-    [SerializeField] private List<PlayerMovementSync> players;
+    public Vector3 spawnPos;
 
     public PlayerMovementSync MyPlayer { get; private set; }
     public WeaponManager MyWeapons { get; private set; }
@@ -17,12 +15,16 @@ public class PlayerInputManager : MonoBehaviour
     public Action onPlayerJoined;
     public Action onUpdate;
 
+    private SpawnerSynchronizable _playerSpawner;
+
     private void Awake()
     {
         if (Instance == null)
             Instance = this;
         else
             Destroy(gameObject);
+
+        _playerSpawner = GetComponent<SpawnerSynchronizable>();
     }
 
     void Update()
@@ -37,14 +39,9 @@ public class PlayerInputManager : MonoBehaviour
 
     public void PlayerJoined(AlterunaTrinity instance, Session session, IDevice device, UInt16 id)
     {
-        if (id > players.Count)
-        {
-            Debug.LogError("Too many players joined");
-            return;
-        }
-
         MyPlayerId = id;
-        MyPlayer = players[id];
+        _playerSpawner.Spawn(spawnPos, Quaternion.identity, Vector3.one);
+        MyPlayer = _playerSpawner.GetObjects()[id].GetComponent<PlayerMovementSync>();
         MyWeapons = MyPlayer.gameObject.GetComponentInChildren<WeaponManager>();
         MyPlayer.OnJoin();
         onPlayerJoined?.Invoke();
