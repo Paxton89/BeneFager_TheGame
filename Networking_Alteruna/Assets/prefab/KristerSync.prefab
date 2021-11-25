@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1480909527328168566}
   - component: {fileID: 2689556580320777924}
   - component: {fileID: 573206038007723470}
+  - component: {fileID: -5274249731845395787}
   m_Layer: 0
   m_Name: KristerSync
   m_TagString: Untagged
@@ -31,7 +32,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 367090610954153055}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8583573880420326382}
@@ -215,6 +216,7 @@ MonoBehaviour:
     m_StretchWidth: 1
     m_StretchHeight: 0
   fpsDisplayRate: 4
+  playerVelocity: {x: 0, y: 0, z: 0}
 --- !u!114 &573206038007723470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,6 +233,21 @@ MonoBehaviour:
   - {fileID: 8612146914376937827}
   _weaponIndex: 0
   UI_AmmoValue: {fileID: 0}
+--- !u!114 &-5274249731845395787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367090610954153055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86932028f3aa4762a814aa791b985f1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pepsiThrusters: []
+  juiceInSeconds: 10
+  jetpackAcceleration: 20
 --- !u!1 &1956232065601253763
 GameObject:
   m_ObjectHideFlags: 0

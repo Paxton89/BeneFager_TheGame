@@ -4,20 +4,20 @@ public class PepsiJetpack : MonoBehaviour
 {
 	public ParticleSystem[] pepsiThrusters;
 	public float juiceInSeconds;
-	public float jetpackForce;
-	public ForceMode jetpackForceMode;
+	public float jetpackAcceleration;
 
 	private bool _thrusting = false;
-	private Rigidbody _rb;
 	private Transform _tf;
+	private PlayerMovementSync _player;
 
 	private void Awake()
 	{
-		_rb = GetComponent<Rigidbody>();
 		_tf = transform;
+		_player = GetComponent<PlayerMovementSync>();
+		PlayerInputManager.Instance.onUpdate += RecieveUpdate;
 	}
 
-	public void Update()
+	private void RecieveUpdate()
 	{
 		if (juiceInSeconds <= 0f)
 		{
@@ -26,10 +26,12 @@ public class PepsiJetpack : MonoBehaviour
 		}
 		
 		if (Input.GetKey(KeyCode.Space))
-		{
+		{ 
 			if (_thrusting)
 			{
 				juiceInSeconds -= Time.deltaTime;
+				_player.playerVelocity += _tf.up * (jetpackAcceleration * Time.deltaTime);
+				
 				return;
 			}
 
@@ -46,14 +48,6 @@ public class PepsiJetpack : MonoBehaviour
 			{
 				system.Stop();
 			}
-		}
-	}
-
-	private void FixedUpdate()
-	{
-		if (_thrusting && _rb)
-		{
-			_rb.AddForce(_tf.up * jetpackForce, jetpackForceMode);
 		}
 	}
 }

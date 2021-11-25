@@ -46,6 +46,17 @@ public class PlayerMovementSync : MonoBehaviour
     private float dt = 0.0f;
     private float fps = 0.0f;
 
+    private CharacterController Controller
+    {
+        get
+        {
+            if (!_controller)
+                _controller = GetComponent<CharacterController>();
+            
+            return _controller;
+        }
+    }
+
     private CharacterController _controller;
 
     // Camera rotations
@@ -53,7 +64,7 @@ public class PlayerMovementSync : MonoBehaviour
     private float rotY = 0.0f;
 
     private Vector3 moveDirectionNorm = Vector3.zero;
-    private Vector3 playerVelocity = Vector3.zero;
+    public Vector3 playerVelocity = Vector3.zero;
     private float playerTopVelocity = 0.0f;
 
     // Q3: players can queue the next jump just before he hits the ground
@@ -127,13 +138,13 @@ public class PlayerMovementSync : MonoBehaviour
 
         /* Movement, here's the important part */
         QueueJump();
-        if (_controller.isGrounded)
+        if (Controller.isGrounded)
             GroundMove();
-        else if (!_controller.isGrounded)
+        else if (!Controller.isGrounded)
             AirMove();
 
         // Move the controller
-        _controller.Move(playerVelocity * Time.deltaTime);
+        Controller.Move(playerVelocity * Time.deltaTime);
 
         /* Calculate top velocity */
         Vector3 udp = playerVelocity;
@@ -320,7 +331,7 @@ public class PlayerMovementSync : MonoBehaviour
         drop = 0.0f;
 
         /* Only if the player is on the ground then apply friction */
-        if (_controller.isGrounded)
+        if (Controller.isGrounded)
         {
             control = speed < runDeacceleration ? runDeacceleration : speed;
             drop = control * friction * Time.deltaTime * t;
@@ -358,7 +369,7 @@ public class PlayerMovementSync : MonoBehaviour
     private void OnGUI()
     {
         GUI.Label(new Rect(0, 0, 400, 100), "FPS: " + fps, style);
-        var ups = _controller.velocity;
+        var ups = Controller.velocity;
         ups.y = 0;
         GUI.Label(new Rect(0, 15, 400, 100), "Speed: " + Mathf.Round(ups.magnitude * 100) / 100 + "ups", style);
         GUI.Label(new Rect(0, 30, 400, 100), "Top Speed: " + Mathf.Round(playerTopVelocity * 100) / 100 + "ups", style);
